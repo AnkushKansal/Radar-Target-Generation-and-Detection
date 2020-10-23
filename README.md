@@ -121,7 +121,7 @@ N_training = (2 * Tr + 2 * Gr + 1) * (2 * Td + 2 * Gd + 1) - (N_guard + 1);
 ```
 
 ### Steps taken to suppress the non-thresholded cells at the edges
-_Line 164 in script Radar_Target_Generation_and_Detection.m_
+_Line 163 in script Radar_Target_Generation_and_Detection.m_
 
 ```
 CFAR = zeros(size(RDM));
