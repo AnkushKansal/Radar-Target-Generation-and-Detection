@@ -1,6 +1,5 @@
 %% Radar Target Generation and Detection
 % Udacity Sensor Fusion, Project 4
-% Dylan Walker Brown
 
 clear; close all; clc;
 
