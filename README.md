@@ -9,6 +9,7 @@ This project uses Matlab to introduce frequency modulated continuous-wave (FMCW)
 
 ## Visualization of the results
 
+![First FFT](figures/Image1.png)
 ![2D FFT](figures/Image2.png)
 ![2D CFAR](figures/Image3.png)
 
@@ -20,12 +21,14 @@ Instructions for installing the latest version of Matlab can be found at https:/
 ### FMCW Waveform Design
 Using the given system requirements, design a FMCW waveform. Find its Bandwidth (B), chirp time (Tchirp) and slope of the chirp.
 
-%% Radar Specifications 
+%% Radar Specifications
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Frequency of operation = 77GHz
 % Max Range = 200m
 % Range Resolution = 1 m
 % Max Velocity = 100 m/s
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 fc= 77e9;             %carrier freq
@@ -34,14 +37,14 @@ c = 3*10^8;
 RMax = 200;
 
 B = c / (2 * rangeResolution);
-Tchirp = rttScale * (2 * maxRange / c);  % scale factor on round-trip time 
+Tchirp = rttScale * (2 * maxRange / c);  % scale factor on round-trip time
 slope =  B / Tchirp;
 
 % The number of chirps in one sequence. It's ideal to have 2^value for ease
-% of running FFT for Doppler estimation. 
+% of running FFT for Doppler estimation.
 Nd = 128;  % # of doppler cells OR # of sent periods % number of chirps
 
-% The number of samples on each chirp. 
+% The number of samples on each chirp.
 Nr = 1024;  % for length of time OR # of range cells
 
 % Timestamp for running the displacement scenario for every sample.
@@ -55,7 +58,8 @@ Mix = zeros(1, length(t));  % beat signal
 
 ### Signal generation and moving target simulation
 
-% For each time stamp update the range of the target for constant velocity. 
+% For each time stamp update the range of the target for constant velocity.
+
 for i = 1:length(t)
 
     % Time delay for round trip on this iteration, given constant velocity.
@@ -121,7 +125,7 @@ N_training = (2 * Tr + 2 * Gr + 1) * (2 * Td + 2 * Gd + 1) - (N_guard + 1);
 ```
 
 ### Steps taken to suppress the non-thresholded cells at the edges
-_Line 164 in script Radar_Target_Generation_and_Detection.m_
+_Line 163 in script Radar_Target_Generation_and_Detection.m_
 
 ```
 CFAR = zeros(size(RDM));
