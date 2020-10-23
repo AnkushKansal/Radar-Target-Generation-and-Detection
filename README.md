@@ -10,7 +10,7 @@ This project uses Matlab to introduce frequency modulated continuous-wave (FMCW)
 ## Visualization of the results
 
 ![2D FFT](figures/Image2.png)
-![2D CFAR](figures/image3.png)
+![2D CFAR](figures/Image3.png)
 
 ## Installing Matlab
 Instructions for installing the latest version of Matlab can be found at https://www.mathworks.com/
